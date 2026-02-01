@@ -1,0 +1,42 @@
+[package]
+name = "rust-002-50"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+candle-core = { version = "0.9.2-alpha.1", path = "../../../../candle/candle-core", features=["cuda"] }
+tch = { version="0.22.0" }
+
+[profile.release]
+opt-level = 3
+
+[[bin]]
+name = "test_libtorch"
+path = "src/test_libtorch.rs"
+test = false
+bench= false
+[[bin]]
+name = "tch_matmul_v1"
+path = "src/tch_matmul_v1.rs"
+test = false
+bench= false
+[[bin]]
+name = "tch_matmul_v2"
+path = "src/tch_matmul_v2.rs"
+test = false
+bench= false
+[[bin]]
+name = "candle_matmul_v1"
+path = "src/candle_matmul_v1.rs"
+test = false
+bench= false
+[[bin]]
+name = "candle_matmul_v2"
+path = "src/candle_matmul_v2.rs"
+test = false
+bench= false
+[[bin]]
+name = "libtorch_gpu_cpu"
+path = "src/libtorch_gpu_cpu.rs"
+test = false
+bench= false

@@ -1,0 +1,25 @@
+[package]
+name = "rust-002-48"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+candle-core = { path="/home/trinhtuan/candle/candle-core", version = "0.9.2-alpha.1", features = ["cuda", "cudnn"] }
+candle-nn = { path="/home/trinhtuan/candle/candle-nn", version = "0.9.2-alpha.1", features = ["cuda", "cudnn"] }
+rand = "0.9.2"
+
+[[bin]]
+name = "simd_demo"
+path = "./src/simd_demo.rs"
+test = false
+bench= false
+[[bin]]
+name = "matmul_diff_gpu_cpu"
+path = "./src/matmul_diff_gpu_cpu.rs"
+test = false
+bench= false
+[[bin]]
+name = "vector_gpu_vs_cpu"
+path = "./src/vector_gpu_vs_cpu.rs"
+test = false
+bench= false
