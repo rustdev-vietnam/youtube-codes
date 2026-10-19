@@ -1,0 +1,21 @@
+[package]
+name = "rust-002-51"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+candle-core = { version = "0.9.2-alpha.1", path = "../../../../candle/candle-core", features = ["cuda", "cudnn"] }
+candle-nn = { version = "0.9.2-alpha.1", path = "../../../../candle/candle-nn", features = ["cuda", "cudnn"] }
+candle-transformers = { version = "0.9.2-alpha.1", path = "../../../../candle/candle-transformers", features = ["cuda", "cudnn"] }
+hf-hub = { version = "0.4.3", features = ["tokio"] }
+regex = "1.12.2"
+serde = { version = "1.0.228", features = ["derive"] }
+serde_json = "1.0.145"
+tokenizers = "0.22.1"
+tokio = "1.48.0"
+
+[[bin]]
+name = "demo_txtgen"
+path = "src/demo_txtgen.rs"
+test = false
+bench= false
